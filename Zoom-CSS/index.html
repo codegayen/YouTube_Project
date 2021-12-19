@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Zoom CSS</title>
+    </head>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            font-size: 40px;
+            font-family: sans-serif;
+            font-weight: bold;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color:black ;
+        }
+        .a{
+            color: blue;
+            animation: zoom 2s ease-in-out infinite;
+            animation-delay:0.40s ;
+        }.b{
+            color: rgb(255, 217, 0);
+            animation: zoom 2s ease-in-out infinite;
+            animation-delay: 0.30s;
+        }.c{
+            color: rgb(0, 255, 106);
+            animation: zoom 2s ease-in-out infinite;
+            animation-delay:0.20s ;
+        }.d{
+            color: rgb(255, 0, 170);
+            animation: zoom 2s ease-in-out infinite;
+            animation-delay: 0.10s;
+        }.e{
+            color: rgb(255, 0, 21);
+            animation: zoom 2s ease-in-out infinite;
+            animation-delay: 0.01s;
+        }
+        @keyframes zoom{
+            40%{transform: translate(-50%,-60%)scale(1.05);}
+            50%{transform: translate(-50%,-60%)scale(1.05);}
+            0%{transform: translate(-50%,-45%)scale(0.85);}
+            90%{transform: translate(-50%,-45%)scale(0.85);}
+            100%{transform: translate(-50%,-45%)scale(0.85);}
+        }
+    </style>
+    <body>
+        <div class="a">ZoomCSS</div>
+        <div class="b">ZoomCSS</div>
+        <div class="c">ZoomCSS</div>
+        <div class="d">ZoomCSS</div>
+        <div class="e">ZoomCSS</div>
+    </body>
+</html>

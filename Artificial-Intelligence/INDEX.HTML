@@ -1,0 +1,15 @@
+<h1>AI</h1>
+<div></div>
+<input/>
+<button onclick="send()">Send</button>
+<script>
+    function send(){
+        var send = document.querySelector("input").value;
+        if(send=="WILL YOU BE MY GF?"){       
+        document.querySelector("div").innerHTML+="<li style='text-align:right;'>"+send+"</li><li>NO HEMANTA</li>";
+        document.querySelector("input").value="";
+        }else{
+        document.querySelector("div").innerHTML+="<li style='text-align:right;'>"+send+"</li><li>YES HEMANTA</li>" 
+        document.querySelector("input").value=""};
+        }
+</script>
