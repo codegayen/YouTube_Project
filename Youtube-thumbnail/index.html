@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>
+            Youtube Thumbnail download
+        </title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                display: grid;
+                background-color: chocolate;
+            }
+            input{
+                width: 280px;
+                height: 30px;
+                justify-self: center;
+                margin-top: 20px;
+                padding: 5px;
+                font-size: 10px;
+                color: black;
+                border-radius: 10px;
+                border: 1px solid rgb(0, 26, 255);
+                overflow: hidden;
+                box-shadow: 1px 1px 5px #000000;
+            }
+            button{
+                width: 150px;
+                height: 25px;
+                justify-self: center;
+                background-color: rgb(51, 129, 255);
+                color: wheat;
+                border: 2px solid black;
+                overflow: hidden;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+            button:hover{
+                background-color: brown;
+            }
+            img{
+                width: 300px;
+                height: 200px;
+                justify-self: center;
+                margin-top: 20px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <input placeholder="YouTube Video Link"
+         class="videoID"/>
+        <button onclick="add()">Thumbnail download</button>
+        <img class="hd"/>
+        <img class="sd"/>
+        <img class="normal"/>
+    </body>
+    <script>
+        function add(){
+            var link = document.querySelector(".videoID").value;
+            var ID = link.slice(-11);
+            var hd_img = "https://img.youtube.com/vi/"+ID+"/maxresdefault.jpg";
+            var sd_img = "https://img.youtube.com/vi/"+ID+"/sddefault.jpg";
+            var normal_img = "https://img.youtube.com/vi/"+ID+"/hqdefault.jpg";
+            document.querySelector(".hd").src= hd_img;
+            document.querySelector(".sd").src= sd_img;
+            document.querySelector(".normal").src= normal_img;
+        
+            //alert(link)
+        }
+    </script>
+</html>
