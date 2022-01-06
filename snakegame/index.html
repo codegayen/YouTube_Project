@@ -1,0 +1,72 @@
+<canvas width="400" height="400"></canvas>
+<script>
+    window.onload=function(){
+        c=document.querySelector("canvas");
+        ctx=c.getContext("2d");
+        document.addEventListener("keydown",key);
+        setInterval(game,1000/15);
+    }
+    px=py=10;
+    ax=ay=15;
+    gs=tc=20;
+    xv=yv=0;
+    snake=[];
+    tail=5;
+    function game(){
+        px+=xv;
+        py+=yv;
+        if(px<0){
+            px=19;
+        }
+        if(py<0){
+            py=19;
+        }
+        if(px>19){
+            px=0;
+        }
+        if(py>19){
+            py=0;
+        }
+        ctx.fillStyle="black";
+        ctx.fillRect(0,0,c.width,c.height);
+
+        
+        ctx.fillStyle="lime";
+        for(var i=0;i<snake.length;i++){
+            ctx.fillRect(snake[i].x*gs,snake[i].y*gs,gs-2,gs-2);
+            if(snake[i].x==px && snake[i].y==py){
+                tail=5;
+            }
+        }
+        snake.push({x:px,y:py});
+        while(snake.length>tail){
+            snake.shift();
+        }
+        if(ax==px && ay==py){
+            tail++;
+            ax=Math.floor(Math.random()*tc);
+            ay=Math.floor(Math.random()*tc);
+        }
+        ctx.fillStyle="red";
+        ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+
+
+    }
+    function key(evt){
+        switch(evt.keyCode){
+            case 37:
+                xv=-1;yv=0;
+                break;
+            case 38:
+                xv=0;yv=-1;
+                break;
+            case 39:
+                xv=1;yv=0;
+                break;
+            case 40:
+                xv=0;yv=1;
+                break;
+        }
+
+    }
+</script>
